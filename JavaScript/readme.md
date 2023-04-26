@@ -14,3 +14,14 @@ js机制在对待任务时，被认为是不平等的，执行更快的任务应
 
 - 微任务是线程之间的切换，速度快
 - 宏任务是进程之间的切换，速度慢，每次执行都需要切换上下文
+
+## setTimeout 实现 setInterval
+
+```js
+const myFunction = () => {
+  // do something
+  setTimeout(myFunction, 1000);
+};
+
+setTimeout(myFunction, 1000);
+```
